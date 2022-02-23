@@ -9,6 +9,7 @@ namespace MyTextEditor
     class StringHelper
     {
         public static int wordsCount(string text) {
+            if (text.Length == 0) return 0;
             int wordsCount = 0;
             for (int i = 0; i < text.Length; i++) {
                 if (!isAlphaNumeric(text[i])) {
@@ -19,7 +20,20 @@ namespace MyTextEditor
                     }
                 }
             }
-            return wordsCount;
+            return wordsCount+1;
+        }
+
+        public static int linesCount(string text) {
+            if (text.Length == 0) return 0;
+            int linesCount = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i]=='\n')
+                {
+                    linesCount++;
+                }
+            }
+            return linesCount+1;
         }
 
         public static bool isAlphaNumeric(char c) {

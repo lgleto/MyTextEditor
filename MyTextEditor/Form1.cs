@@ -21,6 +21,7 @@ namespace MyTextEditor
         {
             labelChars.Text = $"Caracteres:{textBoxText.Text.Length }";
             labelWords.Text = $"Palavras:{StringHelper.wordsCount(textBoxText.Text)}";
+            labelLines.Text = $"Linhas:{StringHelper.linesCount(textBoxText.Text)}";
         }
     }
 }
